@@ -124,7 +124,6 @@
             // 
             // btnRollDice
             // 
-            this.btnRollDice.Enabled = false;
             this.btnRollDice.Font = new System.Drawing.Font("Stencil", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRollDice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.btnRollDice.Location = new System.Drawing.Point(75, 147);

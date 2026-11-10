@@ -14,6 +14,12 @@ namespace ProjectGame
     {
         Player player1 = new Player();
         Player player2 = new Player();
+
+        int totalRounds;
+        int currentRound;
+        bool gameStarted = false;
+        bool player1IsSetup = false;
+        bool player2IsSetup=false;
         public Form1()
         {
             InitializeComponent();
@@ -51,7 +57,19 @@ namespace ProjectGame
 
         private void btnstart_Click(object sender, EventArgs e)
         {
-            
+            totalRounds = Convert.ToInt32(numTotalRounds.Value);
+            currentRound = totalRounds;
+            lblCurrentRound.Text = currentRound.ToString();
+            gameStarted = true;
+            btnRollDice.Enabled = true;
+
+            lblPlayerTurn.Text = player1.Name + "'s turn";
+            btnStartGame.Enabled = false;
+            numTotalRounds.Enabled = false;
+            rbAvatar1.Enabled = false;
+            rbAvatar2.Enabled = false;
+            rbAvatar3.Enabled = false;
+            rbAvatar4.Enabled = false;
         }
 
         private void picdefaultPlayer1_Click(object sender, EventArgs e)
@@ -102,7 +120,7 @@ namespace ProjectGame
             else if (rbAvatar3.Checked)
             {
                 player1.avatars = 3;
-                picdefaultPlayer1.Image= Properties.Resources.avatar3;
+                picdefaultPlayer1.Image = Properties.Resources.avatar3;
             }
             else
             {
@@ -110,13 +128,24 @@ namespace ProjectGame
                 picdefaultPlayer1.Image = Properties.Resources.avatar4;
             }
 
-            if (player1.avatars == player2.avatars) 
+            if (player1.avatars == player2.avatars)
             {
                 MessageBox.Show("this avatar is already choosed Please choose another one ");
                 player1.avatars = 0;
-                picdefaultPlayer1.Image=Properties.Resources.avatar_default;
+                picdefaultPlayer1.Image = Properties.Resources.avatar_default;
                 return;
             }
+
+
+            player1IsSetup = true;
+
+            if (player1IsSetup == true) 
+            
+            { btnStartGame.Enabled = true; }
+
+            if (player2IsSetup == true) 
+            
+            {  btnStartGame.Enabled = true; }
 
 
         }
@@ -124,34 +153,44 @@ namespace ProjectGame
         private void btnSetupPlayer2_Click(object sender, EventArgs e)
         {
             player2.Name = txtPlayer2Name.Text;
-            if (rbAvatar1.Checked) 
-            { 
+            if (rbAvatar1.Checked)
+            {
                 player2.avatars = 1;
                 picdefaultPlayer2.Image = Properties.Resources.avatar1;
             }
             else if (rbAvatar2.Checked)
             {
                 player2.avatars = 2;
-                picdefaultPlayer2.Image= Properties.Resources.avatar2;
+                picdefaultPlayer2.Image = Properties.Resources.avatar2;
             }
-            else if (rbAvatar3.Checked) 
-            { 
-                player2.avatars=3;
-                picdefaultPlayer2.Image=Properties.Resources.avatar3;
+            else if (rbAvatar3.Checked)
+            {
+                player2.avatars = 3;
+                picdefaultPlayer2.Image = Properties.Resources.avatar3;
             }
-            else 
+            else
             {
                 player2.avatars = 4;
                 picdefaultPlayer2.Image = Properties.Resources.avatar4;
             }
-            if (player1.avatars == player2.avatars) 
+            if (player1.avatars == player2.avatars)
             {
                 MessageBox.Show("this avatar is already choosed please take another one");
                 player2.avatars = 0;
-                picdefaultPlayer2.Image= Properties.Resources.avatar_default;
+                picdefaultPlayer2.Image = Properties.Resources.avatar_default;
             }
+
+            player2IsSetup = true;
+            if (player1IsSetup == true)
+
+            { btnStartGame.Enabled = true; }
+
+            if (player2IsSetup == true) 
+
+            { btnStartGame.Enabled = true; }
+
         }
 
-       
+
     }
 }
