@@ -7,7 +7,7 @@
     <ProjectGuid>{D5718EA0-EB62-410C-8B56-F533DA3098DB}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>ProjectGame</RootNamespace>
-    <AssemblyName>ProjectGame</AssemblyName>
+    <AssemblyName>work_hard_not_smart_project_1</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

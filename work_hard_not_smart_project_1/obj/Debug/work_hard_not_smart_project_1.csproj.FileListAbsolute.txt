@@ -1,0 +1,13 @@
+C:\Users\OUALID\Desktop\Game-Project-Edip-main\ProjectGame\bin\RenameCheck\work_hard_not_smart_project_1.exe.config
+C:\Users\OUALID\Desktop\Game-Project-Edip-main\ProjectGame\bin\RenameCheck\work_hard_not_smart_project_1.exe
+C:\Users\OUALID\Desktop\Game-Project-Edip-main\ProjectGame\bin\RenameCheck\work_hard_not_smart_project_1.pdb
+C:\Users\OUALID\Desktop\Game-Project-Edip-main\ProjectGame\obj\Debug\work_hard_not_smart_project_1.csproj.AssemblyReference.cache
+C:\Users\OUALID\Desktop\Game-Project-Edip-main\ProjectGame\obj\Debug\ProjectGame.Form1.resources
+C:\Users\OUALID\Desktop\Game-Project-Edip-main\ProjectGame\obj\Debug\ProjectGame.Properties.Resources.resources
+C:\Users\OUALID\Desktop\Game-Project-Edip-main\ProjectGame\obj\Debug\work_hard_not_smart_project_1.csproj.GenerateResource.cache
+C:\Users\OUALID\Desktop\Game-Project-Edip-main\ProjectGame\obj\Debug\work_hard_not_smart_project_1.csproj.CoreCompileInputs.cache
+C:\Users\OUALID\Desktop\Game-Project-Edip-main\ProjectGame\obj\Debug\work_hard_not_smart_project_1.exe
+C:\Users\OUALID\Desktop\Game-Project-Edip-main\ProjectGame\obj\Debug\work_hard_not_smart_project_1.pdb
+C:\Users\OUALID\Desktop\Game-Project-Edip-main\ProjectGame\bin\NameCheck\work_hard_not_smart_project_1.exe.config
+C:\Users\OUALID\Desktop\Game-Project-Edip-main\ProjectGame\bin\NameCheck\work_hard_not_smart_project_1.exe
+C:\Users\OUALID\Desktop\Game-Project-Edip-main\ProjectGame\bin\NameCheck\work_hard_not_smart_project_1.pdb
