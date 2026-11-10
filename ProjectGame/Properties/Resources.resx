@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -127,12 +127,6 @@
   <data name="avatar4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\avatar4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-<<<<<<< HEAD
-=======
-  <data name="avatar1 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\avatar1 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
->>>>>>> origin/main
   <data name="dice6" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dice6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -169,8 +163,5 @@
   <data name="avatar_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\avatar_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-<<<<<<< HEAD
 </root>
-=======
-</root>
->>>>>>> origin/main
+

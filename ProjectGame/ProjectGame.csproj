@@ -98,12 +98,6 @@
     <None Include="Resources\avatar1.png" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-=======
-    <None Include="Resources\avatar1 %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
->>>>>>> origin/main
     <None Include="Resources\avatar3.png" />
   </ItemGroup>
   <ItemGroup>
@@ -134,8 +128,5 @@
     <None Include="Resources\avatar_default.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-<<<<<<< HEAD
 </Project>
-=======
-</Project>
->>>>>>> origin/main
+

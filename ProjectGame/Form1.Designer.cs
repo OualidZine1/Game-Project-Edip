@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 namespace ProjectGame
-=======
-﻿namespace ProjectGame
->>>>>>> origin/main
 {
     partial class Form1
     {
@@ -35,10 +31,6 @@ namespace ProjectGame
             this.gbAction = new System.Windows.Forms.GroupBox();
             this.lblCurrentRound = new System.Windows.Forms.Label();
             this.picDice = new System.Windows.Forms.PictureBox();
-<<<<<<< HEAD
-            this.picDice2 = new System.Windows.Forms.PictureBox();
-=======
->>>>>>> origin/main
             this.btnRollDice = new System.Windows.Forms.Button();
             this.lblPlayerTurn = new System.Windows.Forms.Label();
             this.lblround = new System.Windows.Forms.Label();
@@ -77,10 +69,6 @@ namespace ProjectGame
             this.lblteamname = new System.Windows.Forms.Label();
             this.gbAction.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picDice)).BeginInit();
-<<<<<<< HEAD
-            ((System.ComponentModel.ISupportInitialize)(this.picDice2)).BeginInit();
-=======
->>>>>>> origin/main
             this.gbavatars.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAvatar4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAvatar3)).BeginInit();
@@ -100,20 +88,12 @@ namespace ProjectGame
             this.gbAction.BackColor = System.Drawing.Color.Transparent;
             this.gbAction.Controls.Add(this.lblCurrentRound);
             this.gbAction.Controls.Add(this.picDice);
-<<<<<<< HEAD
-            this.gbAction.Controls.Add(this.picDice2);
-=======
->>>>>>> origin/main
             this.gbAction.Controls.Add(this.btnRollDice);
             this.gbAction.Controls.Add(this.lblPlayerTurn);
             this.gbAction.Controls.Add(this.lblround);
             this.gbAction.Font = new System.Drawing.Font("Jokerman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbAction.ForeColor = System.Drawing.Color.White;
-<<<<<<< HEAD
             this.gbAction.Location = new System.Drawing.Point(32, 278);
-=======
-            this.gbAction.Location = new System.Drawing.Point(32, 283);
->>>>>>> origin/main
             this.gbAction.Name = "gbAction";
             this.gbAction.Size = new System.Drawing.Size(329, 292);
             this.gbAction.TabIndex = 1;
@@ -135,45 +115,22 @@ namespace ProjectGame
             // 
             this.picDice.BackColor = System.Drawing.Color.Transparent;
             this.picDice.Image = global::ProjectGame.Properties.Resources.dice1;
-<<<<<<< HEAD
-            this.picDice.Location = new System.Drawing.Point(62, 190);
-=======
-            this.picDice.Location = new System.Drawing.Point(94, 194);
->>>>>>> origin/main
+            this.picDice.Location = new System.Drawing.Point(119, 190);
             this.picDice.Name = "picDice";
             this.picDice.Size = new System.Drawing.Size(90, 90);
             this.picDice.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picDice.TabIndex = 4;
             this.picDice.TabStop = false;
-<<<<<<< HEAD
-            this.picDice2.BackColor = System.Drawing.Color.Transparent;
-            this.picDice2.Image = global::ProjectGame.Properties.Resources.dice1;
-            this.picDice2.Location = new System.Drawing.Point(177, 190);
-            this.picDice2.Name = "picDice2";
-            this.picDice2.Size = new System.Drawing.Size(90, 90);
-            this.picDice2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picDice2.TabIndex = 6;
-            this.picDice2.TabStop = false;
-=======
->>>>>>> origin/main
             // 
             // btnRollDice
             // 
             this.btnRollDice.Font = new System.Drawing.Font("Stencil", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRollDice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-<<<<<<< HEAD
             this.btnRollDice.Location = new System.Drawing.Point(100, 145);
             this.btnRollDice.Name = "btnRollDice";
             this.btnRollDice.Size = new System.Drawing.Size(130, 32);
             this.btnRollDice.TabIndex = 3;
             this.btnRollDice.Text = "Roll Both Dice";
-=======
-            this.btnRollDice.Location = new System.Drawing.Point(75, 147);
-            this.btnRollDice.Name = "btnRollDice";
-            this.btnRollDice.Size = new System.Drawing.Size(119, 23);
-            this.btnRollDice.TabIndex = 3;
-            this.btnRollDice.Text = "Roll ";
->>>>>>> origin/main
             this.btnRollDice.UseVisualStyleBackColor = true;
             // 
             // lblPlayerTurn
@@ -181,16 +138,10 @@ namespace ProjectGame
             this.lblPlayerTurn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.lblPlayerTurn.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblPlayerTurn.Font = new System.Drawing.Font("Rockwell", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-<<<<<<< HEAD
             this.lblPlayerTurn.Location = new System.Drawing.Point(24, 98);
             this.lblPlayerTurn.Name = "lblPlayerTurn";
             this.lblPlayerTurn.Size = new System.Drawing.Size(281, 32);
             this.lblPlayerTurn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-=======
-            this.lblPlayerTurn.Location = new System.Drawing.Point(65, 107);
-            this.lblPlayerTurn.Name = "lblPlayerTurn";
-            this.lblPlayerTurn.Size = new System.Drawing.Size(146, 21);
->>>>>>> origin/main
             this.lblPlayerTurn.TabIndex = 2;
             // 
             // lblround
@@ -233,11 +184,7 @@ namespace ProjectGame
             this.btnSetupPlayer2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.btnSetupPlayer2.Location = new System.Drawing.Point(34, 329);
             this.btnSetupPlayer2.Name = "btnSetupPlayer2";
-<<<<<<< HEAD
             this.btnSetupPlayer2.Size = new System.Drawing.Size(239, 36);
-=======
-            this.btnSetupPlayer2.Size = new System.Drawing.Size(223, 30);
->>>>>>> origin/main
             this.btnSetupPlayer2.TabIndex = 9;
             this.btnSetupPlayer2.TabStop = false;
             this.btnSetupPlayer2.Text = "Set Up Player 2";
@@ -251,11 +198,7 @@ namespace ProjectGame
             this.btnSetupPlayer1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.btnSetupPlayer1.Location = new System.Drawing.Point(34, 264);
             this.btnSetupPlayer1.Name = "btnSetupPlayer1";
-<<<<<<< HEAD
             this.btnSetupPlayer1.Size = new System.Drawing.Size(239, 36);
-=======
-            this.btnSetupPlayer1.Size = new System.Drawing.Size(223, 33);
->>>>>>> origin/main
             this.btnSetupPlayer1.TabIndex = 8;
             this.btnSetupPlayer1.Text = "Set Up Player 1";
             this.btnSetupPlayer1.UseVisualStyleBackColor = true;
@@ -293,21 +236,13 @@ namespace ProjectGame
             // 
             // picAvatar1
             // 
-<<<<<<< HEAD
             this.picAvatar1.Image = global::ProjectGame.Properties.Resources.avatar1;
-=======
-            this.picAvatar1.Image = global::ProjectGame.Properties.Resources.avatar1__1_;
->>>>>>> origin/main
             this.picAvatar1.Location = new System.Drawing.Point(43, 49);
             this.picAvatar1.Name = "picAvatar1";
             this.picAvatar1.Size = new System.Drawing.Size(76, 78);
             this.picAvatar1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picAvatar1.TabIndex = 4;
             this.picAvatar1.TabStop = false;
-<<<<<<< HEAD
-=======
-            this.picAvatar1.Click += new System.EventHandler(this.picAvatar1_Click);
->>>>>>> origin/main
             // 
             // rbAvatar4
             // 
@@ -328,10 +263,6 @@ namespace ProjectGame
             this.rbAvatar3.TabIndex = 2;
             this.rbAvatar3.TabStop = true;
             this.rbAvatar3.UseVisualStyleBackColor = true;
-<<<<<<< HEAD
-=======
-            this.rbAvatar3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
->>>>>>> origin/main
             // 
             // rbAvatar2
             // 
@@ -352,10 +283,6 @@ namespace ProjectGame
             this.rbAvatar1.TabIndex = 0;
             this.rbAvatar1.TabStop = true;
             this.rbAvatar1.UseVisualStyleBackColor = true;
-<<<<<<< HEAD
-=======
-            this.rbAvatar1.CheckedChanged += new System.EventHandler(this.rbavatar1_CheckedChanged);
->>>>>>> origin/main
             // 
             // gbPlayer1score
             // 
@@ -402,10 +329,6 @@ namespace ProjectGame
             this.picdefaultPlayer1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picdefaultPlayer1.TabIndex = 0;
             this.picdefaultPlayer1.TabStop = false;
-<<<<<<< HEAD
-=======
-            this.picdefaultPlayer1.Click += new System.EventHandler(this.picdefaultPlayer1_Click);
->>>>>>> origin/main
             // 
             // gbPlayer2score
             // 
@@ -583,10 +506,6 @@ namespace ProjectGame
             this.lblTotalrounds.Size = new System.Drawing.Size(112, 21);
             this.lblTotalrounds.TabIndex = 0;
             this.lblTotalrounds.Text = "Game Rounds";
-<<<<<<< HEAD
-=======
-            this.lblTotalrounds.Click += new System.EventHandler(this.lblrounds_Click);
->>>>>>> origin/main
             // 
             // lblgameName
             // 
@@ -604,15 +523,9 @@ namespace ProjectGame
             // 
             this.btnResetAll.Font = new System.Drawing.Font("Stencil", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnResetAll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-<<<<<<< HEAD
             this.btnResetAll.Location = new System.Drawing.Point(389, 510);
             this.btnResetAll.Name = "btnResetAll";
             this.btnResetAll.Size = new System.Drawing.Size(307, 50);
-=======
-            this.btnResetAll.Location = new System.Drawing.Point(432, 498);
-            this.btnResetAll.Name = "btnResetAll";
-            this.btnResetAll.Size = new System.Drawing.Size(204, 77);
->>>>>>> origin/main
             this.btnResetAll.TabIndex = 7;
             this.btnResetAll.Text = "Reset All";
             this.btnResetAll.UseVisualStyleBackColor = true;
@@ -622,15 +535,9 @@ namespace ProjectGame
             this.btnStartGame.Enabled = false;
             this.btnStartGame.Font = new System.Drawing.Font("Stencil", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStartGame.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-<<<<<<< HEAD
             this.btnStartGame.Location = new System.Drawing.Point(716, 510);
             this.btnStartGame.Name = "btnStartGame";
             this.btnStartGame.Size = new System.Drawing.Size(307, 50);
-=======
-            this.btnStartGame.Location = new System.Drawing.Point(835, 498);
-            this.btnStartGame.Name = "btnStartGame";
-            this.btnStartGame.Size = new System.Drawing.Size(198, 77);
->>>>>>> origin/main
             this.btnStartGame.TabIndex = 8;
             this.btnStartGame.Text = "Start";
             this.btnStartGame.UseVisualStyleBackColor = true;
@@ -640,15 +547,9 @@ namespace ProjectGame
             // 
             this.btnShowResults.Font = new System.Drawing.Font("Stencil", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShowResults.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-<<<<<<< HEAD
             this.btnShowResults.Location = new System.Drawing.Point(1043, 510);
             this.btnShowResults.Name = "btnShowResults";
             this.btnShowResults.Size = new System.Drawing.Size(307, 50);
-=======
-            this.btnShowResults.Location = new System.Drawing.Point(1216, 498);
-            this.btnShowResults.Name = "btnShowResults";
-            this.btnShowResults.Size = new System.Drawing.Size(198, 77);
->>>>>>> origin/main
             this.btnShowResults.TabIndex = 9;
             this.btnShowResults.Text = "Show Results";
             this.btnShowResults.UseVisualStyleBackColor = true;
@@ -664,26 +565,16 @@ namespace ProjectGame
             this.lblteamname.Size = new System.Drawing.Size(259, 19);
             this.lblteamname.TabIndex = 10;
             this.lblteamname.Text = "Team : work hard not smart";
-<<<<<<< HEAD
-=======
-            this.lblteamname.Click += new System.EventHandler(this.label1_Click);
->>>>>>> origin/main
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< HEAD
             this.BackColor = System.Drawing.Color.FromArgb(12, 20, 48);
             this.BackgroundImage = global::ProjectGame.Properties.Resources.téléchargement;
             this.ClientSize = new System.Drawing.Size(1545, 648);
             this.MinimumSize = new System.Drawing.Size(1100, 650);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-=======
-            this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::ProjectGame.Properties.Resources.téléchargement;
-            this.ClientSize = new System.Drawing.Size(1545, 648);
->>>>>>> origin/main
             this.Controls.Add(this.lblteamname);
             this.Controls.Add(this.btnShowResults);
             this.Controls.Add(this.btnStartGame);
@@ -697,17 +588,9 @@ namespace ProjectGame
             this.Controls.Add(this.gbInitializations);
             this.Name = "Form1";
             this.Text = "Form1";
-<<<<<<< HEAD
             this.gbAction.ResumeLayout(false);
             this.gbAction.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picDice)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picDice2)).EndInit();
-=======
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.gbAction.ResumeLayout(false);
-            this.gbAction.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picDice)).EndInit();
->>>>>>> origin/main
             this.gbavatars.ResumeLayout(false);
             this.gbavatars.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAvatar4)).EndInit();
@@ -758,10 +641,6 @@ namespace ProjectGame
         private System.Windows.Forms.Button btnRollDice;
         private System.Windows.Forms.Label lblPlayerTurn;
         private System.Windows.Forms.PictureBox picDice;
-<<<<<<< HEAD
-        private System.Windows.Forms.PictureBox picDice2;
-=======
->>>>>>> origin/main
         private System.Windows.Forms.Label lblPoint1;
         private System.Windows.Forms.PictureBox picdefaultPlayer1;
         private System.Windows.Forms.PictureBox picdefaultPlayer2;
@@ -777,8 +656,6 @@ namespace ProjectGame
     }
 }
 
-<<<<<<< HEAD
 
 
-=======
->>>>>>> origin/main
+

@@ -1,23 +1,11 @@
-<<<<<<< HEAD
 using System;
 using System.IO;
-=======
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
->>>>>>> origin/main
 using System.Windows.Forms;
 
 namespace ProjectGame
 {
     public partial class Form1 : Form
     {
-<<<<<<< HEAD
         private readonly Player player1 = new Player();
         private readonly Player player2 = new Player();
         private readonly Random randomGenerator = new Random();
@@ -29,6 +17,7 @@ namespace ProjectGame
         private bool gameFinished;
         private bool player1IsSetup;
         private bool player2IsSetup;
+        private bool player1Turn;
         private string winnerName;
         private string resultsFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "GameResults.txt");
 
@@ -42,95 +31,15 @@ namespace ProjectGame
             btnShowResults.Click += (s, e) => ShowGameResults();
             btnRollDice.Click += (s, e) => PlayRound();
             UpdateGameInterface();
-=======
-        Player player1 = new Player();
-        Player player2 = new Player();
-
-        int totalRounds;
-        int currentRound;
-        bool gameStarted = false;
-        bool player1IsSetup = false;
-        bool player2IsSetup=false;
-        public Form1()
-        {
-            InitializeComponent();
-        }
-
-        private void lblrounds_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton3_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void rbavatar1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void picAvatar1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnstart_Click(object sender, EventArgs e)
-        {
-            totalRounds = Convert.ToInt32(numTotalRounds.Value);
-            currentRound = totalRounds;
-            lblCurrentRound.Text = currentRound.ToString();
-            gameStarted = true;
-            btnRollDice.Enabled = true;
-
-            lblPlayerTurn.Text = player1.Name + "'s turn";
-            btnStartGame.Enabled = false;
-            numTotalRounds.Enabled = false;
-            rbAvatar1.Enabled = false;
-            rbAvatar2.Enabled = false;
-            rbAvatar3.Enabled = false;
-            rbAvatar4.Enabled = false;
-        }
-
-        private void picdefaultPlayer1_Click(object sender, EventArgs e)
-        {
-            
->>>>>>> origin/main
         }
 
         private void txtPlayer1Name_TextChanged(object sender, EventArgs e)
         {
-<<<<<<< HEAD
             UpdateGameInterface();
-=======
-            if (txtPlayer1Name.Text != string.Empty)
-            {
-                btnSetupPlayer1.Enabled =true;
-            }
-            else
-            {
-                btnSetupPlayer1.Enabled=false;
-            }
-           
-
-
->>>>>>> origin/main
         }
 
         private void txtPlayer2Name_TextChanged(object sender, EventArgs e)
         {
-<<<<<<< HEAD
             UpdateGameInterface();
         }
 
@@ -226,8 +135,9 @@ namespace ProjectGame
             gameStarted = true;
             gameFinished = false;
             winnerName = null;
-            picDice.Image = picDice2.Image = Properties.Resources.dice1;
-            lblPlayerTurn.Text = "Both players roll each round";
+            picDice.Image = Properties.Resources.dice1;
+            player1Turn = true;
+            lblPlayerTurn.Text = player1.Name + " rolls first";
             UpdateGameInterface();
         }
 
@@ -236,13 +146,23 @@ namespace ProjectGame
         private void PlayRound()
         {
             if (!gameStarted) return;
-            player1DiceValue = RollDice();
+
+            if (player1Turn)
+            {
+                player1DiceValue = RollDice();
+                picDice.Image = DiceImage(player1DiceValue);
+                lblPlayerTurn.Text = player1.Name + " rolled " + player1DiceValue + ". " + player2.Name + " rolls next.";
+                player1Turn = false;
+                UpdateGameInterface();
+                return;
+            }
+
             player2DiceValue = RollDice();
-            picDice.Image = DiceImage(player1DiceValue);
-            picDice2.Image = DiceImage(player2DiceValue);
+            picDice.Image = DiceImage(player2DiceValue);
             lblPlayerTurn.Text = player1.Name + ": " + player1DiceValue + "   |   " + player2.Name + ": " + player2DiceValue;
             CalculateScores();
             currentRound++;
+            player1Turn = true;
             if (currentRound > totalRounds)
             {
                 FinishGame();
@@ -252,8 +172,19 @@ namespace ProjectGame
 
         private void CalculateScores()
         {
-            if (player1DiceValue >= player2DiceValue) player1.points++;
-            if (player2DiceValue >= player1DiceValue) player2.points++;
+            if (player1DiceValue == player2DiceValue)
+            {
+                player1.points++;
+                player2.points++;
+            }
+            else if (player1DiceValue > player2DiceValue)
+            {
+                player1.points++;
+            }
+            else
+            {
+                player2.points++;
+            }
         }
 
         private System.Drawing.Image DiceImage(int value)
@@ -299,7 +230,8 @@ namespace ProjectGame
             totalRounds = currentRound = 0;
             txtPlayer1Name.Clear(); txtPlayer2Name.Clear(); rbAvatar1.Checked = rbAvatar2.Checked = rbAvatar3.Checked = rbAvatar4.Checked = false;
             numTotalRounds.Value = 5; picdefaultPlayer1.Image = picdefaultPlayer2.Image = Properties.Resources.avatar_default;
-            picDice.Image = picDice2.Image = Properties.Resources.dice1; lblPlayerTurn.Text = String.Empty; lstGameResults.Items.Clear();
+            player1Turn = true;
+            picDice.Image = Properties.Resources.dice1; lblPlayerTurn.Text = String.Empty; lstGameResults.Items.Clear();
             UpdateGameInterface();
         }
 
@@ -309,6 +241,9 @@ namespace ProjectGame
             btnSetupPlayer2.Enabled = !gameStarted && !player2IsSetup && !String.IsNullOrWhiteSpace(txtPlayer2Name.Text);
             btnStartGame.Enabled = !gameStarted && !gameFinished && player1IsSetup && player2IsSetup && numTotalRounds.Value >= 5 && numTotalRounds.Value <= 30;
             btnRollDice.Enabled = gameStarted && !gameFinished;
+            btnRollDice.Text = gameStarted && !gameFinished
+                ? (player1Turn ? player1.Name + " rolls" : player2.Name + " rolls")
+                : "Roll Dice";
             numTotalRounds.Enabled = !gameStarted && !gameFinished;
             rbAvatar1.Enabled = rbAvatar2.Enabled = rbAvatar3.Enabled = rbAvatar4.Enabled = !gameStarted && !gameFinished;
             btnSetupPlayer1.Enabled &= !gameFinished;
@@ -316,105 +251,6 @@ namespace ProjectGame
             lblPlayer1Points.Text = player1.points.ToString(); lblPlayer2Points.Text = player2.points.ToString();
             lblCurrentRound.Text = totalRounds > 0 ? Math.Min(currentRound, totalRounds) + " / " + totalRounds : "0";
         }
-=======
-            if (txtPlayer2Name.Text!=string.Empty) 
-            { 
-                btnSetupPlayer2.Enabled =true;
-            }
-            else 
-            {
-                btnSetupPlayer2.Enabled=false;
-            }
-        }
-
-        private void btnSetupPlayer1_Click(object sender, EventArgs e)
-        {
-            player1.Name = txtPlayer1Name.Text;
-            if (rbAvatar1.Checked)
-            {
-                player1.avatars = 1;
-                picdefaultPlayer1.Image = Properties.Resources.avatar1;
-            }
-            else if (rbAvatar2.Checked)
-            {
-                player1.avatars = 2;
-                picdefaultPlayer1.Image = Properties.Resources.avatar2;
-            }
-            else if (rbAvatar3.Checked)
-            {
-                player1.avatars = 3;
-                picdefaultPlayer1.Image = Properties.Resources.avatar3;
-            }
-            else
-            {
-                player1.avatars = 4;
-                picdefaultPlayer1.Image = Properties.Resources.avatar4;
-            }
-
-            if (player1.avatars == player2.avatars)
-            {
-                MessageBox.Show("this avatar is already choosed Please choose another one ");
-                player1.avatars = 0;
-                picdefaultPlayer1.Image = Properties.Resources.avatar_default;
-                return;
-            }
-
-
-            player1IsSetup = true;
-
-            if (player1IsSetup == true) 
-            
-            { btnStartGame.Enabled = true; }
-
-            if (player2IsSetup == true) 
-            
-            {  btnStartGame.Enabled = true; }
-
-
-        }
-
-        private void btnSetupPlayer2_Click(object sender, EventArgs e)
-        {
-            player2.Name = txtPlayer2Name.Text;
-            if (rbAvatar1.Checked)
-            {
-                player2.avatars = 1;
-                picdefaultPlayer2.Image = Properties.Resources.avatar1;
-            }
-            else if (rbAvatar2.Checked)
-            {
-                player2.avatars = 2;
-                picdefaultPlayer2.Image = Properties.Resources.avatar2;
-            }
-            else if (rbAvatar3.Checked)
-            {
-                player2.avatars = 3;
-                picdefaultPlayer2.Image = Properties.Resources.avatar3;
-            }
-            else
-            {
-                player2.avatars = 4;
-                picdefaultPlayer2.Image = Properties.Resources.avatar4;
-            }
-            if (player1.avatars == player2.avatars)
-            {
-                MessageBox.Show("this avatar is already choosed please take another one");
-                player2.avatars = 0;
-                picdefaultPlayer2.Image = Properties.Resources.avatar_default;
-            }
-
-            player2IsSetup = true;
-            if (player1IsSetup == true)
-
-            { btnStartGame.Enabled = true; }
-
-            if (player2IsSetup == true) 
-
-            { btnStartGame.Enabled = true; }
-
-        }
-
-
->>>>>>> origin/main
     }
 }
+

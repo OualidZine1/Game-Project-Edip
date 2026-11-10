@@ -1,0 +1,10 @@
+# Visual Studio workspace cache
+.vs/
+
+# Build output
+**/bin/
+**/obj/
+
+# User-specific IDE files
+*.user
+*.suo
