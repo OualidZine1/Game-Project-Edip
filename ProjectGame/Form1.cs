@@ -32,22 +32,14 @@ namespace ProjectGame
             UpdateGameInterface();
         }
 
-        private void lblrounds_Click(object sender, EventArgs e) { }
-        private void radioButton3_CheckedChanged(object sender, EventArgs e) { }
-        private void rbavatar1_CheckedChanged(object sender, EventArgs e) { }
-        private void picAvatar1_Click(object sender, EventArgs e) { }
-        private void picdefaultPlayer1_Click(object sender, EventArgs e) { }
-        private void Form1_Load(object sender, EventArgs e) { }
-        private void label1_Click(object sender, EventArgs e) { }
-
         private void txtPlayer1Name_TextChanged(object sender, EventArgs e)
         {
-            btnSetupPlayer1.Enabled = !player1IsSetup && !gameStarted && !String.IsNullOrWhiteSpace(txtPlayer1Name.Text);
+            UpdateGameInterface();
         }
 
         private void txtPlayer2Name_TextChanged(object sender, EventArgs e)
         {
-            btnSetupPlayer2.Enabled = !player2IsSetup && !gameStarted && !String.IsNullOrWhiteSpace(txtPlayer2Name.Text);
+            UpdateGameInterface();
         }
 
         private int SelectedAvatar()
@@ -61,22 +53,52 @@ namespace ProjectGame
 
         private void SetupPlayer1()
         {
-            if (String.IsNullOrWhiteSpace(txtPlayer1Name.Text)) return;
+            if (String.IsNullOrWhiteSpace(txtPlayer1Name.Text))
+            {
+                MessageBox.Show("Enter Player 1's name.");
+                return;
+            }
             int avatar = SelectedAvatar();
-            if (avatar == 0) { MessageBox.Show("Choose an avatar first."); return; }
-            if (avatar == player2.avatars) { MessageBox.Show("Choose a different avatar from Player 2."); return; }
-            player1.Name = txtPlayer1Name.Text.Trim(); player1.avatars = avatar; player1IsSetup = true;
+            if (avatar == 0)
+            {
+                MessageBox.Show("Choose an avatar first.");
+                return;
+            }
+            if (avatar == player2.avatars)
+            {
+                MessageBox.Show("Choose a different avatar from Player 2.");
+                return;
+            }
+            player1.Name = txtPlayer1Name.Text.Trim();
+            player1.avatars = avatar;
+            player1IsSetup = true;
+            btnSetupPlayer1.Enabled = false;
             picdefaultPlayer1.Image = AvatarImage(avatar);
             UpdateGameInterface();
         }
 
         private void SetupPlayer2()
         {
-            if (String.IsNullOrWhiteSpace(txtPlayer2Name.Text)) return;
+            if (String.IsNullOrWhiteSpace(txtPlayer2Name.Text))
+            {
+                MessageBox.Show("Enter Player 2's name.");
+                return;
+            }
             int avatar = SelectedAvatar();
-            if (avatar == 0) { MessageBox.Show("Choose an avatar first."); return; }
-            if (avatar == player1.avatars) { MessageBox.Show("Choose a different avatar from Player 1."); return; }
-            player2.Name = txtPlayer2Name.Text.Trim(); player2.avatars = avatar; player2IsSetup = true;
+            if (avatar == 0)
+            {
+                MessageBox.Show("Choose an avatar first.");
+                return;
+            }
+            if (avatar == player1.avatars)
+            {
+                MessageBox.Show("Choose a different avatar from Player 1.");
+                return;
+            }
+            player2.Name = txtPlayer2Name.Text.Trim();
+            player2.avatars = avatar;
+            player2IsSetup = true;
+            btnSetupPlayer2.Enabled = false;
             picdefaultPlayer2.Image = AvatarImage(avatar);
             UpdateGameInterface();
         }
@@ -99,10 +121,21 @@ namespace ProjectGame
 
         private void StartGame()
         {
-            if (!player1IsSetup || !player2IsSetup || numTotalRounds.Value < 5 || numTotalRounds.Value > 30)
-            { MessageBox.Show("Set up both players and choose 5 to 30 rounds."); return; }
-            totalRounds = (int)numTotalRounds.Value; currentRound = 1;
-            player1.points = player2.points = 0; gameStarted = true; gameFinished = false; winnerName = null;
+            if (!player1IsSetup || !player2IsSetup)
+            {
+                MessageBox.Show("Set up both players first.");
+                return;
+            }
+
+            totalRounds = (int)numTotalRounds.Value;
+            currentRound = 1;
+            player1.points = 0;
+            player2.points = 0;
+            gameStarted = true;
+            gameFinished = false;
+            winnerName = null;
+            picDice.Image = picDice2.Image = Properties.Resources.dice1;
+            lblPlayerTurn.Text = "Both players roll each round";
             UpdateGameInterface();
         }
 
@@ -110,17 +143,25 @@ namespace ProjectGame
 
         private void PlayRound()
         {
-            if (!gameStarted || gameFinished) return;
-            player1DiceValue = RollDice(); player2DiceValue = RollDice();
+            if (!gameStarted) return;
+            player1DiceValue = RollDice();
+            player2DiceValue = RollDice();
             picDice.Image = DiceImage(player1DiceValue);
             picDice2.Image = DiceImage(player2DiceValue);
             lblPlayerTurn.Text = player1.Name + ": " + player1DiceValue + "   |   " + player2.Name + ": " + player2DiceValue;
-            if (player1DiceValue > player2DiceValue) player1.points++;
-            else if (player2DiceValue > player1DiceValue) player2.points++;
-            else { player1.points++; player2.points++; }
+            CalculateScores();
             currentRound++;
-            if (currentRound > totalRounds) FinishGame();
+            if (currentRound > totalRounds)
+            {
+                FinishGame();
+            }
             UpdateGameInterface();
+        }
+
+        private void CalculateScores()
+        {
+            if (player1DiceValue >= player2DiceValue) player1.points++;
+            if (player2DiceValue >= player1DiceValue) player2.points++;
         }
 
         private System.Drawing.Image DiceImage(int value)
@@ -135,8 +176,11 @@ namespace ProjectGame
 
         private void FinishGame()
         {
-            gameFinished = true; gameStarted = false;
-            winnerName = player1.points == player2.points ? "Draw" : (player1.points > player2.points ? player1.Name : player2.Name);
+            gameFinished = true;
+            gameStarted = false;
+            if (player1.points == player2.points) winnerName = "Draw";
+            else if (player1.points > player2.points) winnerName = player1.Name;
+            else winnerName = player2.Name;
             lblPlayerTurn.Text = winnerName == "Draw" ? "It's a draw!" : winnerName + " wins!";
             string record = DateTime.Now.ToString("yyyy-MM-dd HH:mm") + " | " + player1.Name + " " + player1.points + " - " + player2.points + " " + player2.Name + " | Rounds: " + totalRounds + " | " + winnerName;
             try { File.AppendAllText(resultsFilePath, record + Environment.NewLine); }
@@ -154,9 +198,13 @@ namespace ProjectGame
 
         private void ResetAll()
         {
-            player1.Name = player2.Name = String.Empty; player1.points = player2.points = 0;
-            player1.avatars = player2.avatars = 0; player1IsSetup = player2IsSetup = false;
-            gameStarted = gameFinished = false; winnerName = null; totalRounds = 0; currentRound = 0;
+            player1.Name = player2.Name = String.Empty;
+            player1.points = player2.points = 0;
+            player1.avatars = player2.avatars = 0;
+            player1IsSetup = player2IsSetup = false;
+            gameStarted = gameFinished = false;
+            winnerName = null;
+            totalRounds = currentRound = 0;
             txtPlayer1Name.Clear(); txtPlayer2Name.Clear(); rbAvatar1.Checked = rbAvatar2.Checked = rbAvatar3.Checked = rbAvatar4.Checked = false;
             numTotalRounds.Value = 5; picdefaultPlayer1.Image = picdefaultPlayer2.Image = Properties.Resources.avatar_default;
             picDice.Image = picDice2.Image = Properties.Resources.dice1; lblPlayerTurn.Text = String.Empty; lstGameResults.Items.Clear();
@@ -171,8 +219,10 @@ namespace ProjectGame
             btnRollDice.Enabled = gameStarted && !gameFinished;
             numTotalRounds.Enabled = !gameStarted && !gameFinished;
             rbAvatar1.Enabled = rbAvatar2.Enabled = rbAvatar3.Enabled = rbAvatar4.Enabled = !gameStarted && !gameFinished;
+            btnSetupPlayer1.Enabled &= !gameFinished;
+            btnSetupPlayer2.Enabled &= !gameFinished;
             lblPlayer1Points.Text = player1.points.ToString(); lblPlayer2Points.Text = player2.points.ToString();
-            lblCurrentRound.Text = gameStarted ? currentRound + " / " + totalRounds : "0";
+            lblCurrentRound.Text = totalRounds > 0 ? Math.Min(currentRound, totalRounds) + " / " + totalRounds : "0";
         }
     }
 }

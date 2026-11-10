@@ -18,3 +18,6 @@ C:\Users\OUALID\Desktop\Game-Project-Edip-main\ProjectGame\obj\Debug\ProjectGame
 C:\Users\OUALID\Desktop\Game-Project-Edip-main\ProjectGame\bin\Debug\ProjectGame.exe.config
 C:\Users\OUALID\Desktop\Game-Project-Edip-main\ProjectGame\bin\Debug\ProjectGame.exe
 C:\Users\OUALID\Desktop\Game-Project-Edip-main\ProjectGame\bin\Debug\ProjectGame.pdb
+C:\Users\OUALID\Desktop\Game-Project-Edip-main\ProjectGame\bin\LayoutCheck\ProjectGame.exe.config
+C:\Users\OUALID\Desktop\Game-Project-Edip-main\ProjectGame\bin\LayoutCheck\ProjectGame.exe
+C:\Users\OUALID\Desktop\Game-Project-Edip-main\ProjectGame\bin\LayoutCheck\ProjectGame.pdb

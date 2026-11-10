@@ -98,9 +98,6 @@
     <None Include="Resources\avatar1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\avatar1 %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\avatar3.png" />
   </ItemGroup>
   <ItemGroup>
