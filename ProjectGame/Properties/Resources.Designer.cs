@@ -83,6 +83,16 @@ namespace ProjectGame.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+<<<<<<< HEAD
+=======
+        internal static System.Drawing.Bitmap avatar1__1_ {
+            get {
+                object obj = ResourceManager.GetObject("avatar1 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+>>>>>>> origin/main
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
